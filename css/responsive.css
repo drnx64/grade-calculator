@@ -1,0 +1,118 @@
+@media (max-width: 680px) {
+  .app {
+    padding: 16px 10px 40px;
+  }
+  .paper-content {
+    padding: 16px 12px;
+    border-radius: var(--radius-md);
+  }
+
+  /* Stack grid */
+  .term-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .header-title {
+    font-size: 1.2rem;
+  }
+  .header-icon-btn span {
+    display: none;
+  }
+
+  .action-bar {
+    flex-wrap: wrap;
+    gap: 0;
+  }
+  .action-bar-item {
+    font-size: 11px;
+    padding: 4px 7px;
+  }
+  .action-bar-item span {
+    display: none;
+  }
+
+  .tab {
+    padding: 6px 10px 8px;
+    font-size: 11px;
+  }
+  .tab[aria-selected="true"] {
+    padding-bottom: 10px;
+  }
+
+  .card {
+    padding: 12px 12px;
+  }
+  .card .card-row {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .card .card-row .field {
+    flex: 1 1 100%;
+  }
+  .card .card-row .system-choice {
+    flex: 1 1 100%;
+  }
+  .card .card-row .field {
+    flex: 1 1 100%;
+  }
+  #passing-target { width: 100% !important; }
+  .term-label { flex-wrap: wrap; gap: 4px; }
+  .term-actions { flex: 1 1 100%; order: 1; }
+  .term-actions .term-add-comp { font-size: 10px; padding: 1px 5px; }
+  .comp-group-other .comp-row .field { flex: 1 1 45%; }
+
+  .comp-row {
+    flex-wrap: wrap;
+    gap: 4px;
+    padding: 5px 8px;
+  }
+  .comp-row .field {
+    flex: 1 1 30%;
+    min-width: 0;
+  }
+  .comp-row .field-sm {
+    flex: 0 0 50px;
+  }
+
+  .final-grade-value {
+    font-size: 2.4rem;
+  }
+
+  .calc-body-inner {
+    padding: 12px 14px;
+  }
+}
+
+@media (max-width: 420px) {
+  .card {
+    padding: 12px 10px;
+  }
+  .card .field input {
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .card-row {
+    flex-direction: column;
+    gap: 8px;
+  }
+  .system-choice {
+    flex-direction: column;
+  }
+  .weight-bar-wrap {
+    margin-top: 8px;
+  }
+  .weight-bar {
+    height: 16px;
+    font-size: 9px;
+    line-height: 16px;
+  }
+  .weight-bar-legend {
+    flex-wrap: wrap;
+    gap: 8px;
+    font-size: 10px;
+  }
+  .comp-row .field {
+    flex: 1 1 45%;
+  }
+}

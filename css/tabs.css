@@ -1,0 +1,109 @@
+.tabs {
+  display: flex;
+  align-items: flex-end;
+  gap: 0;
+  padding: 0 8px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.tabs::-webkit-scrollbar { display: none; }
+
+.tab {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px 10px;
+  border: 1px solid var(--border);
+  border-bottom: none;
+  border-radius: 10px 10px 0 0;
+  background: var(--paper);
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--ink-soft);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background var(--dur) var(--ease), color var(--dur) var(--ease);
+  position: relative;
+  margin-right: -1px;
+  z-index: 0;
+}
+.tab[aria-selected="true"] {
+  background: var(--paper-raised);
+  color: var(--ink);
+  z-index: 2;
+  padding-bottom: 12px;
+  margin-bottom: -2px;
+  border-color: var(--border);
+  font-weight: 600;
+  border-bottom: 2px solid var(--brass);
+}
+.tab:not([aria-selected="true"]):hover {
+  background: var(--surface-hover);
+  color: var(--ink);
+}
+.tab-actions {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  margin-left: 4px;
+  opacity: 0;
+  transition: opacity var(--dur) var(--ease);
+}
+.tab:hover .tab-actions { opacity: 1; }
+.tab-action {
+  display: flex;
+  padding: 2px;
+  border-radius: 3px;
+  color: var(--ink-soft);
+}
+.tab-action:hover { background: var(--accent-light); color: var(--ink); }
+.tab-action.danger:hover { background: var(--red-light); color: var(--fail); }
+
+.tab-add {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 14px 10px;
+  border: 1px dashed var(--border);
+  border-bottom: none;
+  border-radius: 10px 10px 0 0;
+  background: transparent;
+  color: var(--ink-soft);
+  cursor: pointer;
+  font-size: 11px;
+  transition: color var(--dur) var(--ease), border-color var(--dur) var(--ease);
+}
+.tab-add:hover {
+  color: var(--brass);
+  border-color: var(--brass);
+}
+
+/* Context menu */
+.tab-context-menu {
+  position: fixed;
+  z-index: 9999;
+  background: var(--paper-raised);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+  min-width: 120px;
+}
+.tab-context-menu button {
+  display: block;
+  width: 100%;
+  padding: 8px 14px;
+  border: none;
+  background: transparent;
+  font-size: 12px;
+  color: var(--ink);
+  cursor: pointer;
+  text-align: left;
+}
+.tab-context-menu button:hover {
+  background: var(--accent-light);
+}
+.tab-context-menu button:last-child {
+  color: var(--fail);
+}

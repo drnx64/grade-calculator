@@ -1,0 +1,108 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 0 14px;
+  border-bottom: 1px solid var(--brass);
+  margin-bottom: 0;
+}
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.save-indicator {
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--pass);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.save-indicator.saved {
+  opacity: 1;
+}
+.header-logo svg {
+  width: 22px;
+  height: 22px;
+  color: var(--ink);
+}
+.header-title {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--ink);
+  letter-spacing: -0.02em;
+}
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.header-icon-btn {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 6px 10px;
+  border: none;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--ink-soft);
+  font-size: 12px;
+  font-weight: 500;
+  transition: color var(--dur) var(--ease), background var(--dur) var(--ease);
+}
+.header-icon-btn:hover {
+  color: var(--brass);
+  background: var(--brass-light);
+}
+.header-icon-btn svg {
+  width: 14px;
+  height: 14px;
+}
+
+/* Action bar — toolbar strip */
+.action-bar {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  padding: 10px 0 8px;
+  border-bottom: 1px solid var(--border-light);
+  margin-bottom: 4px;
+}
+.action-bar-item {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 10px;
+  border: none;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--ink-soft);
+  font-size: 12px;
+  font-weight: 500;
+  transition: color var(--dur) var(--ease), background var(--dur) var(--ease);
+  cursor: pointer;
+}
+.action-bar-item:hover {
+  color: var(--ink);
+  background: var(--accent-light);
+}
+.action-bar-item svg {
+  width: 13px;
+  height: 13px;
+}
+.action-bar-sep {
+  width: 1px;
+  height: 16px;
+  background: var(--border);
+  margin: 0 4px;
+}
+.action-bar-item.accent {
+  color: var(--brass);
+}
+.action-bar-item.accent:hover {
+  background: var(--brass-light);
+}
+label.action-bar-item {
+  cursor: pointer;
+}

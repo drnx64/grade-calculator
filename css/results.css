@@ -1,0 +1,116 @@
+/* ===== Calc Section — Slate ===== */
+.calc-section {
+  margin-top: 20px;
+  background: var(--slate);
+  border: 1px solid rgba(244, 241, 232, 0.15);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+}
+.calc-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 18px;
+  cursor: pointer;
+  user-select: none;
+  transition: background var(--dur) var(--ease);
+  background: rgba(244, 241, 232, 0.04);
+}
+.calc-header:hover { background: rgba(244, 241, 232, 0.08); }
+.calc-header-title {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--chalk);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.calc-header-title svg { width: 14px; height: 14px; color: var(--chalk); opacity: 0.7; }
+.calc-header-toggle {
+  display: flex;
+  align-items: center;
+  color: var(--chalk);
+  opacity: 0.6;
+  transition: transform 200ms var(--ease), opacity var(--dur) var(--ease);
+}
+.calc-header-toggle:hover { opacity: 1; }
+.calc-section[aria-expanded="false"] .calc-header-toggle { transform: rotate(-90deg); }
+.calc-body {
+  overflow: hidden;
+  max-height: 4000px;
+  transition: max-height 300ms var(--ease);
+}
+.calc-section[aria-expanded="false"] .calc-body { max-height: 0 !important; }
+.calc-body-inner {
+  padding: 16px 18px;
+  background: var(--slate);
+  border-top: 1px solid rgba(244, 241, 232, 0.1);
+}
+
+/* ===== Calc Typography ===== */
+.calc-section-title {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--chalk);
+  opacity: 0.6;
+  letter-spacing: 0.05em;
+  margin-bottom: 12px;
+}
+.calc-term-label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--brass);
+  letter-spacing: 0.04em;
+  margin: 14px 0 8px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid rgba(244, 241, 232, 0.12);
+}
+.calc-term-label:first-child { margin-top: 0; }
+.calc-comp-name {
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--chalk);
+  opacity: 0.8;
+  margin: 10px 0 4px;
+}
+.calc-line {
+  font-size: 13px;
+  color: var(--chalk);
+  margin: 3px 0;
+  padding-left: 8px;
+  border-left: 2px solid rgba(244, 241, 232, 0.1);
+}
+.calc-total-line {
+  margin: 10px 0 0;
+  padding: 8px 10px;
+  background: rgba(244, 241, 232, 0.06);
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(244, 241, 232, 0.1);
+}
+.calc-total-line .calc-line {
+  border-left: none;
+  padding-left: 0;
+  font-weight: 600;
+}
+
+/* KaTeX on slate */
+.katex { color: var(--chalk); }
+.katex .boxed {
+  background: transparent !important;
+  border: 2px solid var(--brass) !important;
+  border-radius: 4px;
+  padding: 1px 6px;
+  color: var(--brass);
+  font-weight: 600;
+}
+.calc-total-line .katex .boxed {
+  border-color: var(--pass) !important;
+  color: var(--pass);
+}

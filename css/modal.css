@@ -1,0 +1,102 @@
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 200ms var(--ease);
+}
+.modal-backdrop.is-open { opacity: 1; pointer-events: all; }
+
+.modal {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 28px;
+  width: 90%;
+  max-width: 440px;
+  max-height: 80vh;
+  overflow-y: auto;
+  box-shadow: var(--shadow-lg);
+  transform: scale(0.96) translateY(6px);
+  opacity: 0;
+  transition: transform 200ms var(--ease), opacity 200ms var(--ease);
+}
+.modal-backdrop.is-open .modal { transform: scale(1) translateY(0); opacity: 1; }
+.modal-wide { max-width: 580px; }
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.modal-title { font-size: 16px; font-weight: 600; margin: 0; }
+.modal-close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  background: transparent;
+  border: none;
+  color: var(--text-tertiary);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: color var(--dur) var(--ease), background var(--dur) var(--ease);
+}
+.modal-close:hover { color: var(--text); background: var(--surface-hover); }
+
+.modal-body {
+  margin-bottom: 20px;
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+.modal-body .field { margin-bottom: 14px; }
+.modal-body .field input {
+  width: 100%;
+  background: var(--paper);
+  border: 1px solid var(--border);
+  padding: 8px 12px;
+  border-radius: var(--radius-sm);
+  font-size: 13px;
+}
+.modal-body .field input:focus {
+  border-color: var(--brass);
+  box-shadow: 0 0 0 3px var(--brass-light);
+}
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border-light);
+}
+
+/* Preset list */
+.preset-list { list-style: none; padding: 0; margin: 0; }
+.preset-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 12px;
+  background: var(--paper);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  margin-bottom: 4px;
+}
+.preset-item-name { font-size: 13px; font-weight: 500; }
+.preset-item-actions { display: flex; gap: 4px; }
+
+/* KaTeX */
+.step-row { padding: 10px 0; border-bottom: 1px solid var(--border-light); }
+.step-row:last-child { border-bottom: none; }
+.step-label { font-size: 12px; color: var(--text-secondary); margin-bottom: 6px; }
+
+/* PDF options */
+.pdf-options label { display: flex; align-items: center; gap: 8px; padding: 6px 0; font-size: 13px; cursor: pointer; }
+.pdf-options input[type="checkbox"] { width: 16px; height: 16px; accent-color: var(--accent); }
